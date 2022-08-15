@@ -1,7 +1,4 @@
-﻿using System.Linq;
-using Microsoft.AspNetCore.Components;
-using TaskPicker.Extensions;
-using TaskPicker.Services;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace TaskPicker.Shared
 {

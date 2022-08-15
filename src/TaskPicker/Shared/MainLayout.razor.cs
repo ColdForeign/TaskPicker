@@ -1,16 +1,13 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using TaskPicker.Services.UserPreferences;
+﻿using Microsoft.AspNetCore.Components;
 using TaskPicker.Services;
 using MudBlazor;
 
 namespace TaskPicker.Shared
 {
     public partial class MainLayout : LayoutComponentBase, IDisposable
-    { 
-        [Inject] private  LayoutService LayoutService { get; set; }
-        
+    {
+        [Inject] private LayoutService LayoutService { get; set; }
+
         private MudThemeProvider _mudThemeProvider;
 
         protected override void OnInitialized()
@@ -22,7 +19,7 @@ namespace TaskPicker.Shared
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
             await base.OnAfterRenderAsync(firstRender);
-            
+
             if (firstRender)
             {
                 await ApplyUserPreferences();
