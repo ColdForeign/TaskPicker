@@ -1,24 +1,46 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
 
 
-  <ItemGroup>
-    <SupportedPlatform Include="browser" />
-  </ItemGroup>
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
-    <PackageReference Include="MudBlazor" Version="6.0.14" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Blazored.LocalStorage" Version="4.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.7" />
+		<PackageReference Include="MudBlazor" Version="6.0.14" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
+	<!--Excubo  webcompiler -  used for scss and js compilation-->
+	<Target Name="ToolRestore">
+		<Exec Command="dotnet tool restore" StandardOutputImportance="high" />
+	</Target>
+
+	<Target Name="WebCompiler" DependsOnTargets="ToolRestore">
+		<Exec Command="dotnet webcompiler ./Styles/TaskPicker.scss -c excubowebcompiler.json" StandardOutputImportance="high" StandardErrorImportance="high" />
+	</Target>
+
+	<!--Output of Excubo webcompiler-->
+	<Target Name="IncludeGeneratedStaticFiles" DependsOnTargets="WebCompiler">
+		<Error Condition="!Exists('wwwroot/TaskPicker.min.css')" Text="Missing TaskPicker.min.css in wwwroot" />
+		<!--If we ever bundle js  for the docs site uncomment the below check-->
+		<!--<Error Condition="!Exists('wwwroot/TaskPicker.min.js')" Text="Missing TaskPicker.min.js in wwwroot" />-->
+		<ItemGroup>
+			<Content Include="wwwroot/TaskPicker.min.css" Condition="!Exists('wwwroot/TaskPicker.min.css')" />
+			<Content Include="wwwroot/TaskPicker.min.js" Condition="!Exists('wwwroot/TaskPicker.min.js')" />
+		</ItemGroup>
+	</Target>
+
+	<!--Dont Include in build output-->
+	<ItemGroup>
+		<Content Remove="compilerconfig.json" />
+		<Content Remove="excubowebcompiler.json" />
+	</ItemGroup>
 
 </Project>
