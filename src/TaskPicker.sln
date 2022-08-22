@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskPicker.Wasm", "TaskPicker.Wasm\TaskPicker.Wasm.csproj", "{5A2C47F2-030D-41B0-A08A-15417DBFD4BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPicker", "TaskPicker\TaskPicker.csproj", "{01E5D996-BBBC-4E06-A1B2-D2C731DFE287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskPicker", "TaskPicker\TaskPicker.csproj", "{01E5D996-BBBC-4E06-A1B2-D2C731DFE287}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

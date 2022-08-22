@@ -11,7 +11,7 @@ namespace TaskPicker.Shared
 
         protected override void OnInitialized()
         {
-            LayoutService.SetBaseTheme(Theme.LandingPageTheme());
+            LayoutService.SetBaseTheme(Theme.TaskPickerTheme());
 
             base.OnInitialized();
         }
