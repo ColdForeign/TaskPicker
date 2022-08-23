@@ -60,20 +60,12 @@ public class LayoutService
     public BasePage GetDocsBasePage(string uri)
     {
         if (uri.Contains("/picker"))
-        {
             return BasePage.Picker;
-        }
         else if (uri.Contains("/settings"))
-        {
             return BasePage.Settings;
-        }
         else if (uri.Contains("/tasks"))
-        {
             return BasePage.Tasks;
-        }
         else
-        {
             return BasePage.None;
-        }
     }
 }
