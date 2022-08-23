@@ -2,20 +2,20 @@
     <MudIconButton OnClick="DrawerToggleCallback" Icon="@Icons.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start" />
     <MudSpacer />
     <NavLink ActiveClass="d-flex" href="/">
-        @*<MudBlazorLogo Class="docs-mudblazor-logo"/>*@
-        <MudText Color="Color.Primary" Typo="Typo.h5" Class="docs-brand-text">Task Picker</MudText>
+        <MudBlazorLogo Class="taskpicker-logo"/>
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text mt-1">Task Picker</MudText>
     </NavLink>
     <MudSpacer />
     <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Edge="Edge.End" Href="https://github.com/ColdForeign/TaskPicker" />
 </MudHidden>
 <MudHidden Breakpoint="Breakpoint.MdAndUp" Invert="true">
     <NavLink ActiveClass="d-flex me-4" href="/">
-        @*<MudBlazorLogo Class="docs-mudblazor-logo"/>*@
-        <MudText Color="Color.Primary" Typo="Typo.h5" Class="docs-brand-text">Task Picker</MudText>
+        <MudBlazorLogo Class="taskpicker-logo"/>
+        <MudText Color="Color.Primary" Typo="Typo.h5" Class="brand-text mt-1">Task Picker</MudText>
     </NavLink>
-    @*<MudButton Href="/docs/overview" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(DocsBasePage.Docs)">Docs</MudButton>
-        <MudButton Href="/getting-started/installation" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(DocsBasePage.GettingStarted)">Getting Started</MudButton>
-        <MudButton Href="/mud/introduction" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(DocsBasePage.DiscoverMore)">Discover More</MudButton>*@
+    <MudButton Href="/picker" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(BasePage.Picker)">Task Picker</MudButton>
+    <MudButton Href="/tasks" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(BasePage.Tasks)">Old Tasks</MudButton>
+    <MudButton Href="/settings" Color="Color.Inherit" Variant="Variant.Text" Class="@GetActiveClass(BasePage.Settings)">Botnet Settings</MudButton>
 
     <MudSpacer />
     <AppbarButtons />

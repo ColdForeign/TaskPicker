@@ -33,6 +33,7 @@ public class Theme
 
     private static readonly Palette TaskPickerLightPalette = new()
     {
+        Primary = "#1e88e5",
         Black = "#110e2d",
         AppbarText = "#424242",
         AppbarBackground = "rgba(255,255,255,0.8)",
@@ -43,7 +44,7 @@ public class Theme
 
     private static readonly Palette TaskPickerDarkPalette = new()
     {
-        Primary = "#7e6fff",
+        Primary = "#45b4ff",
         Surface = "#1e1e2d",
         Background = "#1a1a27",
         BackgroundGrey = "#151521",
@@ -136,6 +137,7 @@ public class Theme
     };
     private static readonly Palette LandingPageLightPalette = new()
     {
+        Primary = "#1E88E5",
         AppbarText = "#424242",
         AppbarBackground = "rgba(0,0,0,0)",
         BackgroundGrey = "#F9FAFC",
@@ -148,6 +150,7 @@ public class Theme
     };
     private static readonly Palette LandingPageDarkPalette = new()
     {
+        Primary = "#45b4ff",
         AppbarText = "#92929f",
         AppbarBackground = "rgba(0,0,0,0)",
         BackgroundGrey = "#1a1a27",

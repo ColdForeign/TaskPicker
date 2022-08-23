@@ -1,4 +1,5 @@
 ﻿using MudBlazor;
+using TaskPicker.Models;
 using TaskPicker.Services.UserPreferences;
 
 namespace TaskPicker.Services;
@@ -54,5 +55,17 @@ public class LayoutService
     {
         CurrentTheme = theme;
         OnMajorUpdateOccured();
+    }
+
+    public BasePage GetDocsBasePage(string uri)
+    {
+        if (uri.Contains("/picker"))
+            return BasePage.Picker;
+        else if (uri.Contains("/settings"))
+            return BasePage.Settings;
+        else if (uri.Contains("/tasks"))
+            return BasePage.Tasks;
+        else
+            return BasePage.None;
     }
 }
